@@ -37,3 +37,20 @@
 * Pull requests
 * Planning meeting everyday
 * Implementation TBD
+
+## Colour Theme
+* Nav and Highlight - #1B9AAA Blue Munsell
+* Text Colour - #050505 - Rich Black FOGRA 39
+* Container/Background Colour - #F5F1E3
+* Buttons - #136F7C Blue Munsell (Darker Shade)
+* Clickable Text - #FFFFFF White
+
+## Logo
+* To be designed
+
+## Fonts
+* ABeeZee - Home Page Jumbotron
+* Alata - Typical Text in-app and buttons
+
+## CSS Styles
+* Up to you
