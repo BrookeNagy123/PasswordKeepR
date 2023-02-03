@@ -1,8 +1,10 @@
+$background-colour: #F5F1E3;
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #F5F1E3;
+  background: $background-colour;
 }
