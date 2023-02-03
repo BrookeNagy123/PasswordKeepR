@@ -3,6 +3,7 @@ $primary-colour: #1b9aaa;
 $button-colour: #136F7C;
 $font-colour: #050505;
 $click-text-colour: #FFFFFF;
+$delete-exit-colour: #f44336;
 
 header {
   width: 100%;
@@ -17,11 +18,19 @@ header {
   background-color: $primary-colour;
   font-family: $font-stack;
   color: $click-text-colour;
+  height: 4em;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
+  text-decoration: none;
+  font-size: xx-large;
+}
+
+.fa-regular {
+  color: $click-text-colour;
+  font-size: xx-large;
 }
 
 .navbar-right {
@@ -30,16 +39,39 @@ header {
   justify-content: space-around;
   align-items: center;
   list-style-type: none;
-}
+  margin: 0px;
 
-.navbar-right {
-  li {
-    display:block;
+  & li {
+    display: flex;
+    align-items: center;
     padding-inline: 1em;
-  }
-
-  li:hover {
-    background-color: #136F7C;
+    text-decoration: none;
   }
 }
 
+.click-text {
+  color: white;
+  height: 100%;
+
+  & a {
+    color: $click-text-colour;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $button-colour;
+  }
+}
+
+.button-logout {
+  background-color: $delete-exit-colour;
+  border-radius: 8px;
+  border: none;
+  padding: 1em;
+  transition-duration: 0.4s;
+  color: $click-text-colour;
+
+  &:hover {
+    background-color: $button-colour;
+  }
+}
