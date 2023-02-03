@@ -28,8 +28,31 @@
   <script defer src="/scripts/app.js"></script>
 
 </head>
-<body>
+<body class="password-list-body">
   <%- include('partials/_header') %>
-
+  <div class="topnav">
+    <h3>My Passwords</h3>
+    <input type="text" placeholder="Search...">
+  </div>
+  <table>
+  <tbody>
+    <%# for (let id in list) { %>
+      <tr>
+        <td><a href="<%# list[id] %>"><%# id %></a></td>
+        <td><a href="<%#= list[id] %>"><%#= list[id] %></a></td>
+        <td>
+          <form method="GET" action="/list/<%#= id %>">
+          <button type="submit" class="btn btn-outline-primary">Edit</button>
+          </form>
+        </td>
+        <td>
+          <form method="POST" action="/list/<%#= id %>delete">
+          <button type="submit" class="btn btn-outline-danger">Delete</button>
+          </form>
+      </td>
+      </tr>
+    <!-- } -->
+  </tbody>
+</table>
 </body>
 </html>

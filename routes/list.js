@@ -12,4 +12,9 @@ router.get('/', (req, res) => {
   res.render('list')
 });
 
+// router.get('/id', (req, res) => {
+//   const templateVars =
+//   res.render('add', templateVar)
+// })
+
 module.exports = router;
