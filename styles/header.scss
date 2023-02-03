@@ -1,0 +1,45 @@
+$font-stack: Alata;
+$primary-colour: #1b9aaa;
+$button-colour: #136F7C;
+$font-colour: #050505;
+$click-text-colour: #FFFFFF;
+
+header {
+  width: 100%;
+  top: 0;
+  position: fixed;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $primary-colour;
+  font-family: $font-stack;
+  color: $click-text-colour;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navbar-right {
+  li {
+    display:block;
+    padding-inline: 1em;
+  }
+
+  li:hover {
+    background-color: #136F7C;
+  }
+}
+

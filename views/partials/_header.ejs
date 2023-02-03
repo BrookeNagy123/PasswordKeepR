@@ -1,0 +1,15 @@
+<header>
+  <nav class="navbar-container">
+    <a class="navbar-brand" href="/list">PasswordKeepR</a>
+    <ul class="navbar-right">
+      <%# if (user) { %>
+        <li><%# user.name %>asdf</li>
+        <li><form class="form-inline" method="POST" actions="/logout">
+          <button type="submit" class="button-logout">Log Out</button>
+        </form></li>
+      <%# } else { %>
+        <li><a href="/login">Login</a></li>
+      <%# } %>
+    </ul>
+  </nav>
+</header>
