@@ -18,7 +18,6 @@ $delete-exit-colour: #f44336;
     flex-direction: column;
     align-items: center;
     top: 10px;
-    background-color: #136F7C;
     font-size: xx-large;
     width: 100%
 }
@@ -43,5 +42,9 @@ $delete-exit-colour: #f44336;
     background-color: $button-colour;
     color: $click-text-colour;
     box-decoration-break: none;
+    width: 30%;
+    height: 15%;
+    border-radius: 1em;
+    border: none;
 }
 
