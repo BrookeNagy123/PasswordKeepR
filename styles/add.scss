@@ -1,0 +1,47 @@
+$font-stack: Alata;
+$primary-colour: #1b9aaa;
+$button-colour: #136F7C;
+$font-colour: #050505;
+$click-text-colour: #FFFFFF;
+$delete-exit-colour: #f44336;
+
+.password-list-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 5em;
+    height:70%;
+}
+
+.topnav-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 10px;
+    background-color: #136F7C;
+    font-size: xx-large;
+    width: 100%
+}
+
+.password-form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: $click-text-colour;
+    height: 25em;
+    width: 30em;
+    border-radius: 2em;
+    border: 1px black solid;
+    padding: 2em;
+    box-shadow: 4px 4px grey;
+
+    & label {
+        font-weight: bold;
+    }
+}
+
+.submit-password {
+    background-color: $button-colour;
+    color: $click-text-colour;
+    box-decoration-break: none;
+}
+
