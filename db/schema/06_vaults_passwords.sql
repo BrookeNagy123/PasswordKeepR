@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS vaults_passwords CASCADE;
+
+CREATE TABLE vaults_passwords (
+  id SERIAL PRIMARY KEY NOT NULL,
+  vault_id INTEGER REFERENCES vaults(id) ON DELETE CASCADE,
+  password_id INTEGER REFERENCES passwords(id) ON DELETE CASCADE,
+);
