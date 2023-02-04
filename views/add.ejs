@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PasswordKeepR</title>
+  <title>Add a Password</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
@@ -33,34 +33,21 @@
 </head>
 <body class="password-list-body">
   <%- include('partials/_header') %>
-  <div class="topnav">
-    <h3>My Passwords</h3>
-    <div>
-      <form method="GET" action="/list/add">
-      <button type="submit" class="add-button">Add</button>
-    </form>
+  <div class="topnav-add">
+    <h3>Add a New Password</h3>
+        <form>
+            <input type="button" value="Back" onclick="history.back()">
+        </form>
     </div>
-    <input type="text" placeholder="Search...">
-  </div>
-  <table>
-  <tbody>
-    <%# for (let id in list) { %>
-      <tr>
-        <td><a href="<%# list[id] %>"><%# id %></a></td>
-        <td><a href="<%#= list[id] %>"><%#= list[id] %></a></td>
-        <td>
-          <form method="GET" action="/list/<%#= id %>">
-          <button type="submit" class="btn btn-outline-primary">Edit</button>
-          </form>
-        </td>
-        <td>
-          <form method="POST" action="/list/<%#= id %>delete">
-          <button type="submit" class="btn btn-outline-danger">Delete</button>
-          </form>
-      </td>
-      </tr>
-    <!-- } -->
-  </tbody>
-</table>
+    <form method="POST" action="list/add" class="password-form-container">
+        <label for="url">URL</label></br>
+        <input type="url" placeholder="URL" id="url"></br>
+        <label for="username-email">Username / Email</label></br>
+        <input type="text" placeholder="Username / Email" id="username-email"></br>
+        <label for="password">Password</label></br>
+        <input type="password" placeholder="Password" id="password"></br>
+        <button type="submit" class="submit-password">Submit</button>
+    </form>
+
 </body>
 </html>
