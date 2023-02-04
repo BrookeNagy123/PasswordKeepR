@@ -47,31 +47,32 @@
       <h3>Generate Password</h3>
     <form class="options">
       <label>
-      <input type="checkbox" id="option1" name="option1"  >
+      <input type="checkbox" id="option1" name="uppercase"  >
       <h5>UPPERCASE </h5>
        </label>
        <label>
-      <input type="checkbox" id="option1" name="option1" >
+      <input type="checkbox" id="option1" name="lowercase" >
       <h5>LOWERCASE </h5>
        </label>
        <label>
-       <input type="checkbox" id="option1" name="option1" >
+       <input type="checkbox" id="option1" name="numbers" >
        <h5>NUMBERS </h5>
        </label>
        <label>
-       <input type="checkbox" id="option1" name="option1" >
+       <input type="checkbox" id="option1" name="symbols" >
        <h5>SYMBOLS </h5>
        </label>
        <label>
-        <input type="number" id="length" name="tentacles" min="0" max="100">
-        <h5>LENGTH </h5>
+        <input type="number" id="length" min="4" max="20">
+        <h5>LENGTH  (4-20) </h5>
       </label>
     </form>
     <section>
       <label>
-      <h3>Password</h3>
-      <button id="copy">Copy</button>
+        <input type="text" placeholder="Create password" id="password" readonly>
+      <button id="copy" onclick="copy()">Copy</button>
     </label>
+    <button class="generate-btn" id="generate">Generate</button>
     </section>
   </main>
 </body>
