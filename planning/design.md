@@ -8,7 +8,9 @@
 * Delete - POST /list/:id/delete
 
 ## User Login
-* TBD
+* Users are already created in the database
+* Users are already assigned to organizations and vaults
+* Register feature won't be implemented
 
 ## ERD
 
