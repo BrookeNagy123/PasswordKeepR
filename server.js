@@ -37,7 +37,6 @@ const passwordList = require('./routes/list');
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/list', passwordList);
 // Note: mount other resources here, using the same pattern above
@@ -48,6 +47,10 @@ app.use('/list', passwordList);
 
 app.get('/', (req, res) => {
   res.render('index');
+});
+
+app.get('/generator', (req, res) => {
+  res.render('generator');
 });
 
 app.listen(PORT, () => {
