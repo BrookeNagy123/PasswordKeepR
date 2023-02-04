@@ -4,12 +4,16 @@
  * these routes are mounted onto /list
  */
 
-const express = require('express');
-const router  = express.Router();
+const express = require("express");
+const router = express.Router();
 // const db = require('../db/connection');
 
-router.get('/', (req, res) => {
-  res.render('list')
+router.get("/", (req, res) => {
+  res.render("list");
+});
+
+router.get("/add", (req, res) => {
+  res.render("add");
 });
 
 // router.get('/id', (req, res) => {
