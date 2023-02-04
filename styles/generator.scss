@@ -1,0 +1,40 @@
+$background-colour: #F5F1E3;
+$font-stack: Alata;
+$primary-colour: #1b9aaa;
+$button-colour: #136F7C;
+$font-colour: #050505;
+$click-text-colour: #FFFFFF;
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $background-colour;
+}
+
+main{
+  margin-top: 100px;
+}
+
+label{
+  display:flex;
+  align-items: center;
+
+}
+
+input[type=checkbox]{
+  flex: none;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+input[type=number]{
+  flex: none;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+#copy{
+ background-color: $primary-colour;
+ color: $click-text-colour
+}
