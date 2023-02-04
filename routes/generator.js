@@ -17,6 +17,14 @@ const password = document.getElementById("password");
 const generateBtn = document.querySelector("#generate");
 const copyPass = document.querySelector("#copy");
 
+generateBtn.addEventListener("click", () => {
+  const upper = includeUppercase.checked;
+  const numbers = includeNumbers.checked;
+  const symbols = includeSymbols.checked;
+  const length = passLength.value;
+  result.value = generatePassword(numbers, symbols, length);
+});
+
 function generate(){
   // const chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   // const passwordLength = 6;
