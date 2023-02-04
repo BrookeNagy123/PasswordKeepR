@@ -3,12 +3,12 @@
 * As a ______, I can ______, because______
 
 ## Requirements
-* user can register/login and be assigned to an organization
-* an organization has many users
-* user can add a new username and password for a specific website 
-* app can generate passwords based on the criteria specified (password length, contains lowercase, contains uppercase, contains numbers, etc)
-* user can edit and change their password any time
-* user has a convenient copy to clipboard button so they dont have to select the password sites and they can be categoried, to, social (fb, linkedin), work related (bamboo, harvest), entertainment (snapchat, reddit), etc, etc
+* user can register/login and be assigned to an organization - Di
+* an organization has many users - Brooke
+* user can add a new username and password for a specific website - Jaewon
+* app can generate passwords based on the criteria specified (password length, contains lowercase, contains uppercase, contains numbers, etc) - Brooke
+* user can edit and change their password any time - Jaewon
+* user has a convenient copy to clipboard button so they dont have to select the password sites and they can be categoried, to, social (fb, linkedin), work related (bamboo, harvest), entertainment (snapchat, reddit), etc, etc - All
 
 ## User Stories Core
 * As a logged-in user I can create new vaults, whether it is a personal vault or company vault because I need to group and share passwords differently. 
