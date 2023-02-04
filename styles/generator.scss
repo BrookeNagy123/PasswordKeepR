@@ -16,10 +16,9 @@ main{
   margin-top: 100px;
 }
 
-label{
+label {
   display:flex;
   align-items: center;
-
 }
 
 input[type=checkbox]{
@@ -38,3 +37,5 @@ input[type=number]{
  background-color: $primary-colour;
  color: $click-text-colour
 }
+
+
