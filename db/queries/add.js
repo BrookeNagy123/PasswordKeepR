@@ -17,5 +17,17 @@ const addPassword = (newPass) => {
     })
 };
 
+const getCategories = () => {
+  return db.query('SELECT * FROM categories;')
+    .then(data => {
+      return data.rows;
+    })
+    .catch(error => {
+      console.log('query error:', error);
+    })
+}
 
-module.exports = { addPassword };
+
+
+
+module.exports = { addPassword, getCategories };

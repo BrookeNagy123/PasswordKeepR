@@ -7,19 +7,22 @@
 const express = require("express");
 const router = express.Router();
 const db = require('../db/connection');
-const { addPassword } = require('../db/queries/add');
+const { addPassword, getCategories } = require('../db/queries/add');
 
 router.get("/", (req, res) => {
   res.render("list");
 });
 
 router.get("/add", (req, res) => {
-  res.render("add");
+  const categories = getCategories()
+    .then((categories) =>{
+      const data = {categories: categories}
+      res.render('add', data)
+    })
 });
 
 router.post("/add", (req, res) => {
   newPass = req.body;
-  console.log(newPass)
   addPassword(newPass)
     // .then(password => {
     //   res.send(password);
@@ -28,7 +31,7 @@ router.post("/add", (req, res) => {
     //   console.error(error);
     //   res.send(error);
     // });
-    res.render("list");
+  res.redirect("/list");
 });
 
 // router.get('/id', (req, res) => {
