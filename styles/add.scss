@@ -26,7 +26,7 @@ $delete-exit-colour: #f44336;
     display: flex;
     flex-direction: column;
     background-color: $click-text-colour;
-    height: 25em;
+    height: 30em;
     width: 30em;
     border-radius: 2em;
     border: 1px black solid;
@@ -46,5 +46,6 @@ $delete-exit-colour: #f44336;
     height: 15%;
     border-radius: 1em;
     border: none;
+    margin-top: 1em;
 }
 
