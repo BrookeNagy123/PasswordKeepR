@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
 
-  <!-- External Google Font ABeeZee -->
+   <!-- External Google Font ABeeZee -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
@@ -30,9 +30,6 @@
   <!-- Adds CSS -->
   <link rel="stylesheet" href="/styles/add.css" type="text/css" />
 
-  <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/app.js"></script>
-
 </head>
 <body class="password-list-body">
   <%- include('partials/_header') %>
@@ -42,13 +39,22 @@
             <input type="button" value="Back" onclick="history.back()">
         </form>
     </div>
-    <form method="POST" action="list/add" class="password-form-container">
+    <form method="POST" action="/list/add" class="password-form-container">
+        <label for="password-name">Name</label></br>
+        <input type="text" name="password-name"></br>
         <label for="url">URL</label></br>
-        <input type="url" placeholder="URL" id="url"></br>
+        <input type="url" name="url"></br>
         <label for="username-email">Username / Email</label></br>
-        <input type="text" placeholder="Username / Email" id="username-email"></br>
+        <input type="text" name="username"></br>
         <label for="password">Password</label></br>
-        <input type="password" placeholder="Password" id="password"></br>
+        <input type="password" name="password"></br>
+        <label for="category_id">Choose a category</label></br>
+        <select name="category_id" id="category-dropdown">
+          <% for (let category of categories) { %>
+            <option value="<%= category['id'] %>"><%= category['name'] %></option>
+          }
+          <% } %>
+        </select>
         <button type="submit" class="submit-password">Submit</button>
     </form>
     <div></div>
