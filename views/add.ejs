@@ -42,13 +42,15 @@
             <input type="button" value="Back" onclick="history.back()">
         </form>
     </div>
-    <form method="POST" action="list/add" class="password-form-container">
+    <form method="POST" action="/list/add" class="password-form-container">
+        <label for="password-name">Name</label></br>
+        <input type="text" name="password-name"></br>
         <label for="url">URL</label></br>
-        <input type="url" placeholder="URL" id="url"></br>
+        <input type="url" name="url"></br>
         <label for="username-email">Username / Email</label></br>
-        <input type="text" placeholder="Username / Email" id="username-email"></br>
+        <input type="text" name="username"></br>
         <label for="password">Password</label></br>
-        <input type="password" placeholder="Password" id="password"></br>
+        <input type="password" name="password"></br>
         <button type="submit" class="submit-password">Submit</button>
     </form>
     <div></div>

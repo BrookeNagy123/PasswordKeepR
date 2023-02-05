@@ -7,26 +7,15 @@ const addPassword = (newPass) => {
     RETURNING *;
     `;
 
-  const values = []
-  return db.query('SELECT * FROM users;')
+  const values = [newPass['password-name'], 1, newPass.url, newPass.username, newPass.password, newPass.category_id]
+  return db.query(queryString, values)
     .then(data => {
       return data.rows;
-    });
+    })
+    .catch(error => {
+      console.log('query error:', error);
+    })
 };
 
-router.get('/', (req, res) => {
-  const query = `SELECT * FROM widgets`;
-  console.log(query);
-  db.query(query)
-    .then(data => {
-      const widgets = data.rows;
-      res.json({ widgets });
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
-});
 
-module.exports = { getUsers };
+module.exports = { addPassword };
