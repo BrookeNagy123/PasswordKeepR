@@ -1,0 +1,47 @@
+.topnav {
+  position: fixed;
+  top: 5%;
+}
+
+[id^=dropbtn] {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+[id^=dropbtn]:hover, [id^=dropbtn]:focus {
+  background-color: #2980B9;
+}
+
+[id^=dropdownbtn] {
+  position: relative;
+  display: inline-block;
+}
+
+button > * {
+  pointer-events: none;
+}
+
+[id^=dropdown] {
+  display: none;
+}
+[id^=dropdown] a:hover {
+  background-color: #ddd;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}

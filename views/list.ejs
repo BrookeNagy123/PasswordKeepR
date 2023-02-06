@@ -33,6 +33,9 @@
   <!-- Nav CSS -->
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
+  <!-- List CSS -->
+  <link rel="stylesheet" href="/styles/list.css" type="text/css" />
+
   <script defer src="/scripts/app.js"></script>
 
 </head>
@@ -62,9 +65,9 @@
         <td><%= password['username'] %></td>
         <td id="password-text-<%= password['id'] %>"><%= password['password'] %></td>
         <td><%= password['category'] %></td>
-        <td class="dropdown-options">
-          <button class="dropbtn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-          <div id="dropdown" class="dropdown-content">
+        <td id="drop-options-<%= password['id'] %>">
+          <button id="dropbtn-<%= password['id'] %>"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+          <div id="dropdown-<%= password['id'] %>" class="dropdown-content">
             <a id="copy-password-<%= password['id'] %>">Copy Password</a>
             <form method="GET" action="/list/pass_<%- password['id'] %>" id="edit-form-<%= password['id'] %>"></form>
             <a onclick="document.getElementById('edit-form-<%= password['id'] %>').submit(); return false;">Edit</a>
