@@ -1,21 +1,4 @@
-// $(() => {
-//   $('#fetch-users').on('click', () => {
-//     $.ajax({
-//       method: 'GET',
-//       url: '/api/users'
-//     })
-//     .done((response) => {
-//       const $usersList = $('#users');
-//       $usersList.empty();
-
-//       for(const user of response.users) {
-//         $(`<li class="user">`).text(user.name).appendTo($usersList);
-//       }
-//     });
-//   });
-// });
-
-
+// event handler for password list screen
 $(document).ready(function() {
     $("[id^='copy-password']").on("click", (e => {
       const passwordIdTarget = String(e.target.id);

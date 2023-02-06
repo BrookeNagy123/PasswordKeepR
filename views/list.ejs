@@ -66,10 +66,10 @@
           <button class="dropbtn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
           <div id="dropdown" class="dropdown-content">
             <a id="copy-password-<%= password['id'] %>">Copy Password</a>
-            <form method="GET" action="/list/<%#= id %>" id="edit-form"></form>
-            <a onclick="document.getElementById('edit-form').submit(); return false;">Edit</a>
-            <form method="POST" action="/list/<%#= id %>delete" id="delete-form"></form>
-            <a onclick="document.getElementById('delete-form').submit(); return false;">Delete</a>
+            <form method="GET" action="/list/pass_<%- password['id'] %>" id="edit-form-<%= password['id'] %>"></form>
+            <a onclick="document.getElementById('edit-form-<%= password['id'] %>').submit(); return false;">Edit</a>
+            <form method="POST" action="/list/pass_<%- password['id'] %>/delete" id="delete-form-<%= password['id'] %>"></form>
+            <a onclick="document.getElementById('delete-form-<%= password['id'] %>').submit(); return false;">Delete</a>
           </div>
         </td>
       </tr>
