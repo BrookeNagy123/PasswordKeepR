@@ -22,14 +22,25 @@
 
 .footer {
   margin-top: 35mm;
-  border-top: 2px solid #136F7C
+  border-top: 2px solid #136F7C;
 }
 
 .name {
-  color:#136F7C
+  color: #136F7C;
 }
 
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; }
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
