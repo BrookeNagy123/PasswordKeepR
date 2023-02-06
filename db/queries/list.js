@@ -20,4 +20,22 @@ const listPasswords = (user) => {
     })
 };
 
-module.exports = { listPasswords };
+const getPasswordById = (id) => {
+  const queryString = `
+  SELECT *
+  FROM passwords
+  WHERE passwords.id = $1;
+  `;
+
+  const values = [id];
+
+  return db.query(queryString, values)
+  .then(data => {
+    return data.rows[0];
+  })
+  .catch(error => {
+    console.log('query error:', error);
+  })
+}
+
+module.exports = { listPasswords, getPasswordById };
