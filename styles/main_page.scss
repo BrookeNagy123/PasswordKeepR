@@ -1,0 +1,35 @@
+.introduction {
+  max-width: 556px;
+  box-sizing: border-box;
+  display: block;
+  margin-right: 15mm;
+  margin-top: 7mm;
+  font: Alata;
+}
+
+.screenshot {
+  display: block;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  zoom: 40%;
+}
+
+.articlepicture {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer {
+  margin-top: 35mm;
+  border-top: 2px solid #136F7C
+}
+
+.name {
+  color:#136F7C
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
