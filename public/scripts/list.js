@@ -1,7 +1,7 @@
 // event handler for password list screen
 $(document).ready(function() {
     $("[id^='copy-password']").on("click", (e => {
-      const passwordIdTarget = String(e.target.id);
+      const passwordIdTarget = String(e.currentTarget.id);
       const passwordId = passwordIdTarget.replace('copy-password-', '');
       const passText = $("#password-text-" + passwordId).text();
       navigator.clipboard.writeText(passText);
