@@ -7,7 +7,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require('../db/connection');
-const { addPassword, getCategories, editPassword } = require('../db/queries/add');
+const { addPassword, getCategories, editPassword, deletePassword } = require('../db/queries/add');
 const { listPasswords, getPasswordById } = require("../db/queries/list");
 
 router.get("/", (req, res) => {
@@ -16,6 +16,7 @@ router.get("/", (req, res) => {
       const templateVars = {passwords: passwordList}
       res.render("list", templateVars);
     })
+    console.log(req.session)
 
 });
 
@@ -31,7 +32,6 @@ router.get("/pass_:id", (req, res) => {
 });
 
 router.post("/pass_:id", (req, res) => {
-  console.log(req.body)
   editPassword(req.body)
     .then((data) => {
       res.redirect("/list")
@@ -58,8 +58,13 @@ router.post("/add", (req, res) => {
     });
 });
 
-// router.get('/id', (req, res) => {
-//   const templateVars =
-// })
+router.post("/pass_:id/delete", (req, res) => {
+  const passId = req.params.id;
+  const deletePass = deletePassword(passId);
+  Promise.all([passId, deletePass])
+    .then((data) => {
+      res.redirect('/list');
+    });
+});
 
 module.exports = router;

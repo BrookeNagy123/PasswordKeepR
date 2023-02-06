@@ -30,11 +30,11 @@ const getCategories = () => {
 const editPassword = (newPass) => {
   const queryString = `
     UPDATE passwords
-    SET name = $1
-    vault_id = $2
-    url = $3
-    username = $4
-    password = $5
+    SET name = $1,
+    vault_id = $2,
+    url = $3,
+    username = $4,
+    password = $5,
     category_id = $6
     WHERE id = $7
     RETURNING *;
@@ -50,6 +50,22 @@ const editPassword = (newPass) => {
     })
 };
 
+const deletePassword = (passId) => {
+  const queryString = `
+    DELETE FROM passwords
+    WHERE id = $1;
+  `;
+
+  const values = [passId];
+  return db.query(queryString, values)
+  .then(data => {
+    return data.rows;
+  })
+  .catch(error => {
+    console.log('query error:', error);
+  })
+}
 
 
-module.exports = { addPassword, getCategories, editPassword };
+
+module.exports = { addPassword, getCategories, editPassword, deletePassword };
