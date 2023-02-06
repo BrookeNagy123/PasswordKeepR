@@ -7,13 +7,12 @@
 const express = require("express");
 const router = express.Router();
 const db = require('../db/connection');
-const { addPassword, getCategories } = require('../db/queries/add');
+const { addPassword, getCategories, editPassword } = require('../db/queries/add');
 const { listPasswords, getPasswordById } = require("../db/queries/list");
 
 router.get("/", (req, res) => {
   const passwordList = listPasswords()
     .then((passwordList) => {
-      console.log(passwordList)
       const templateVars = {passwords: passwordList}
       res.render("list", templateVars);
     })
@@ -26,10 +25,17 @@ router.get("/pass_:id", (req, res) => {
   const categories = getCategories()
   Promise.all([passInfoById, categories])
     .then((data) => {
-      console.log(data);
-      const templateVars = {id: data[0].id, "password-name": data[0].name, vault_id: data[0].vault_id, url: data[0].url, "username-email": data[0].username, password: data[0].password, category_id: data[0].category_id, categories: data[1]};
-      res.render("add", templateVars);
+      const templateVars = {id: data[0].id, password_name: data[0].name, vault_id: data[0].vault_id, url: data[0].url, username_email: data[0].username, password: data[0].password, category_id: data[0].category_id, categories: data[1]};
+      res.render("edit", templateVars);
     });
+});
+
+router.post("/pass_:id", (req, res) => {
+  console.log(req.body)
+  editPassword(req.body)
+    .then((data) => {
+      res.redirect("/list")
+    })
 });
 
 router.get("/add", (req, res) => {
