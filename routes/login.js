@@ -22,6 +22,11 @@ router.post('/', (req, res) => {
         res.send("Please use valid login details");
         return;
       }
+      const userID = user.id
+      const userEmail = user.email
+      const userOrganization = user.organization_id
+      const templateVars = {userID, userEmail, userOrganization}
+      console.log(templateVars)
       req.session.email = email
       res.redirect("/list")
     })
