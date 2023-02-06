@@ -19,11 +19,11 @@ router.post('/', (req, res) => {
   login(email)
     .then(user => {
       if (!user) {
-        console.log({error: "error"});
+        res.send("Please use valid login details");
         return;
       }
-      //Set Cookie - don't need template vars
-      res.redirect("/")
+      req.session.email = email
+      res.redirect("/list")
     })
     .catch(e => console.log(e));
 });
