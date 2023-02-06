@@ -67,5 +67,5 @@ app.listen(PORT, () => {
 
 app.post("/logout", (req, res) => {
   req.session = null;
-  res.redirect('/login');
+  res.redirect('/');
 });
