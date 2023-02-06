@@ -1,0 +1,42 @@
+.password-list-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5em;
+  height: 70%;
+}
+
+.topnav-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 10px;
+  font-size: xx-large;
+  width: 100%;
+}
+
+.password-form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  height: 30em;
+  width: 30em;
+  border-radius: 2em;
+  border: 1px black solid;
+  padding: 2em;
+  box-shadow: 4px 4px grey;
+}
+.password-form-container label {
+  font-weight: bold;
+}
+
+.submit-password {
+  background-color: #136F7C;
+  color: #FFFFFF;
+  box-decoration-break: none;
+  width: 30%;
+  height: 15%;
+  border-radius: 1em;
+  border: none;
+  margin-top: 1em;
+}
