@@ -1,5 +1,19 @@
 const db = require('../connection');
 
+const getOrgWithId = function (id) {
+  return db.query(`SELECT * FROM users WHERE organization_id = $3`, [id])
+    .then((result) => {
+      if (result.rows.length) {
+        return result.rows[1];
+      } else {
+        return null;
+      }
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
 const addUser = (newUser) => {
   const queryString = `
     INSERT INTO users (email, master_password, organization_id)
@@ -17,4 +31,4 @@ const addUser = (newUser) => {
     })
 };
 
-module.exports = { addUser };
+module.exports = { addUser, getOrgWithId };
