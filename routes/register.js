@@ -32,12 +32,12 @@ router.post("/", (req, res) => {
         res.status(400).send('🚨Email is Already Registered!😳');
         return;
       };
-      // registerOrg(id)
-      //   .then(org => {
-      //     if (!org) {
-      //       res.status(400).send('Organizations does not exist!');
-      //       return;
-      //     };
+      registerOrg(id)
+        .then(org => {
+          if (!org) {
+            res.status(400).send('🚨Organizations does not exist!🧐');
+            return;
+          };
           newUser = req.body;
           addUser(newUser)
             .then(user => {
@@ -49,7 +49,7 @@ router.post("/", (req, res) => {
               res.send(error);
             });
         });
-    })
-// })
+    });
+})
 
 module.exports = router;
