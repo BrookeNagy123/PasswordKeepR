@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
       .then(userInfo => getVaultIdByOrgId(userInfo.organization_id))
       .then(vaultId => listPasswords(vaultId))
       .then(passwordList => {
-        const templateVars = {passwords: passwordList}
+        const templateVars = {passwords: passwordList, user: req.session.email ? req.session.email : null}
         res.render("list", templateVars);
       })
     } else {
@@ -37,7 +37,7 @@ router.get("/pass_:id", (req, res) => {
     Promise.all([passInfoById, categories, userVaultId])
       .then(data => {
         if (data[0].vault_id === data[2]) {
-          const templateVars = {id: data[0].id, password_name: data[0].name, vault_id: data[0].vault_id, url: data[0].url, username_email: data[0].username, password: data[0].password, category_id: data[0].category_id, categories: data[1]};
+          const templateVars = {id: data[0].id, password_name: data[0].name, vault_id: data[0].vault_id, url: data[0].url, username_email: data[0].username, password: data[0].password, category_id: data[0].category_id, categories: data[1], user: req.session.email ? req.session.email : null};
           res.render("edit", templateVars);
         } else {
           res.statusCode = 401;
@@ -77,7 +77,7 @@ router.get("/add", (req, res) => {
   if (req.session.email) {
     const categories = getCategories()
       .then((categories) => {
-        const templateVars = {categories: categories}
+        const templateVars = {categories: categories, user: req.session.email ? req.session.email : null}
         res.render('add', templateVars)
       });
   } else {
