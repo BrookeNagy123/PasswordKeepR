@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
   register(email)
     .then(user => {
       if (user) {
-        res.send("User already exist!");
+        res.status(400).send('🚨Email is Already Registered!😳');
         return;
       };
       newUser = req.body;
