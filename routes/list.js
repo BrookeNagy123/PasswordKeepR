@@ -26,6 +26,8 @@ router.get("/", (req, res) => {
     }
 });
 
+// add .catch to all .then -> console.log(error)
+
 router.get("/pass_:id", (req, res) => {
   if (req.session.email) {
     const userEmail = req.session.email;
@@ -43,7 +45,12 @@ router.get("/pass_:id", (req, res) => {
           res.statusCode = 401;
           res.send("<h1>401 Unauthorized!</h1> <h3>You do not have access to this Password.</h3>")
         }
-      });
+      })
+      .catch(error => {
+        console.log(error);
+        res.statusCode = 404;
+        // res.send("<h1>404 Unauthorized!</h1> <h3>You do not have access to this Password.</h3>")
+      })
   } else {
     res.redirect("/");
   }
