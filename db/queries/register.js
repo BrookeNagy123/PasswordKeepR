@@ -1,10 +1,10 @@
 const db = require('../connection');
 
 const getOrgWithId = function (id) {
-  return db.query(`SELECT * FROM users WHERE organization_id = $3`, [id])
+  return db.query(`SELECT * FROM users WHERE organization_id = $1`, [id])
     .then((result) => {
       if (result.rows.length) {
-        return result.rows[1];
+        return result.rows[0];
       } else {
         return null;
       }
