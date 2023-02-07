@@ -87,14 +87,15 @@ router.get("/add", (req, res) => {
 
 router.post("/add", (req, res) => {
   if (req.session.email) {
-    newPass = req.body;
-    addPassword(newPass)
-      .then(password => {
-        res.redirect("/list");
-      })
-      .catch (error => {
-        console.error(error);
-        res.send(error);
+    const newPass = req.body;
+    const userEmail = req.session.email;
+    const userVaultId = getUserWithEmail(userEmail)
+      .then(userInfo => getVaultIdByOrgId(userInfo.organization_id))
+      .then(vaultId => {
+        addPassword(newPass, vaultId)
+        .then(() => {
+          res.redirect("/list");
+        });
       });
   } else {
     res.redirect("/");
