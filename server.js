@@ -58,7 +58,8 @@ app.use('/register', register)
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('index');
+  const templateVars = {user: req.session.email ? req.session.email : null}
+  res.render('index', templateVars);
 });
 
 app.listen(PORT, () => {

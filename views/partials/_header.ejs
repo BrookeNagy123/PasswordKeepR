@@ -2,15 +2,15 @@
   <nav class="navbar-container">
     <a class="navbar-brand" href="/list">PasswordKeepR</a>
     <ul class="navbar-right">
-      <%# if (user) { %>
-        <li class="click-text"><%# user.name %><i class="fa-regular fa-circle-user"></i></li>
+      <% if (user) { %>
+        <li class="click-text"><a href="/list"><i class="fa-regular fa-circle-user"></i></a></li>
         <li><form class="form-inline" method="POST" action="/logout">
           <button type="submit" class="button-logout">Log Out</button>
         </form></li>
-      <%# } else { %>
+      <% } else { %>
         <li class="click-text"><a href="/login">Login</a></li>
         <li class="click-text"><a href="/register">Register</a></li>
-      <%# } %>
+      <% } %>
     </ul>
   </nav>
 </header>

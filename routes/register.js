@@ -4,13 +4,15 @@ const { addUser } = require('../db/queries/register');
 const db = require('../db/connection');
 
 router.get('/', (req, res) => {
-  res.render('register');
+  const templateVars = {user: req.session.email ? req.session.email : null}
+  res.render('register', templateVars);
 });
 
 router.post("/", (req, res) => {
   newUser = req.body;
   addUser(newUser)
     .then(user => {
+      req.session.email = user[0].email;
       res.redirect("/list");
     })
     .catch(error => {
