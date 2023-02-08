@@ -11,7 +11,8 @@ const login =  function(email) {
 }
 
 router.get('/', (req, res) => {
-  res.render('login');
+  const templateVars = {user: req.session.email ? req.session.email : null}
+  res.render('login', templateVars);
 });
 
 router.post('/', (req, res) => {
@@ -23,7 +24,7 @@ router.post('/', (req, res) => {
         return;
       }
       req.session.email = email
-      res.redirect("/list")
+      res.redirect('list')
     })
     .catch(e => console.log(e));
 });

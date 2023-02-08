@@ -40,6 +40,8 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const passwordList = require('./routes/list');
 const login = require('./routes/login');
+const register = require('./routes/register');
+const logout = require('./routes/logout');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -49,6 +51,8 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/list', passwordList);
 app.use('/login', login)
+app.use('/register', register)
+app.use('/logout', logout)
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -56,13 +60,10 @@ app.use('/login', login)
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('index');
+  const templateVars = { user: req.session.email ? req.session.email : null }
+  res.render('index', templateVars);
 });
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
-
-
-
-

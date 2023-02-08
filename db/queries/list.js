@@ -1,17 +1,17 @@
 const db = require('../connection');
 
-const listPasswords = (user) => {
+const listPasswords = (id) => {
   const queryString = `
   SELECT passwords.name, passwords.url, passwords.username, passwords.password, passwords.id, categories.name AS category
   FROM passwords
   JOIN categories ON categories.id = category_id
   JOIN vaults ON vaults.id = vault_id
-  WHERE vault_id = 1;
+  WHERE vault_id = $1;
   `;
 
-  // const values = [user.vault_id];
+  const values = [id];
 
-  return db.query(queryString)
+  return db.query(queryString, values)
     .then(data => {
       return data.rows;
     })
@@ -20,4 +20,40 @@ const listPasswords = (user) => {
     })
 };
 
-module.exports = { listPasswords };
+const getPasswordById = (id) => {
+  const queryString = `
+  SELECT *
+  FROM passwords
+  WHERE passwords.id = $1;
+  `;
+
+  const values = [id];
+
+  return db.query(queryString, values)
+  .then(data => {
+    return data.rows[0];
+  })
+  .catch(error => {
+    console.log('query error:', error);
+  })
+};
+
+const getVaultIdByOrgId = (id) => {
+  const queryString = `
+  SELECT id AS vault_id
+  FROM vaults
+  WHERE organization_id = $1;
+  `;
+
+  const values = [id];
+
+  return db.query(queryString, values)
+  .then(data => {
+    return data.rows[0].vault_id;
+  })
+  .catch(error => {
+    console.log('query error:', error);
+  })
+};
+
+module.exports = { listPasswords, getPasswordById, getVaultIdByOrgId };
