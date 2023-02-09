@@ -1,0 +1,76 @@
+$background-colour: #F5F1E3;
+$font-stack: Alata;
+$primary-colour: #1b9aaa;
+$button-colour: #136F7C;
+$font-colour: #050505;
+$click-text-colour: #FFFFFF;
+
+body {
+  min-height: 100vh;
+  background: #DDDBCB;
+  font-family: $font-stack;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+label {
+  display:flex;
+  font-family: $font-stack;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  border-width:1px;
+  border-style:solid;
+  border-radius: 5%;
+  border-color: #F5F1E3;
+  background-color: $click-text-colour;
+  cursor: pointer;
+}
+
+input[type=checkbox]{
+  flex: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  accent-color: $primary-colour
+}
+
+input[type=number]{
+  flex: none;
+  margin-left: 10px;
+  margin-right: 20px;
+  accent-color: $primary-colour
+}
+
+input[type="range"] {
+  padding: 8px 10px;
+  background: #f8f8f8;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  accent-color: $primary-colour;
+  cursor: pointer;
+}
+
+#copy{
+ background-color: $primary-colour;
+ color: $click-text-colour;
+ cursor: pointer;
+}
+
+#generate{
+  background-color: $primary-colour;
+  color: $click-text-colour;
+  cursor: pointer;
+}
+
+#result{
+  border-radius: 5%;
+  font-size: large;
+  height: 30px
+}
