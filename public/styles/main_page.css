@@ -2,17 +2,15 @@
   max-width: 556px;
   box-sizing: border-box;
   display: block;
-  margin-right: 15mm;
+  margin-right: 1mm;
   margin-top: 7mm;
   font-family: Alata;
 }
 
 .screenshot {
-  display: block;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  zoom: 40%;
+  zoom: 70%;
 }
 
 .articlepicture {
