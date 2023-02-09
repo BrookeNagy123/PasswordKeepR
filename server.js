@@ -47,7 +47,6 @@ const logout = require('./routes/logout');
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/list', passwordList);
 app.use('/login', login)
@@ -62,6 +61,10 @@ app.use('/logout', logout)
 app.get('/', (req, res) => {
   const templateVars = { user: req.session.email ? req.session.email : null }
   res.render('index', templateVars);
+});
+
+app.get('/generator', (req, res) => {
+  res.render('generator');
 });
 
 app.listen(PORT, () => {
