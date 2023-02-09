@@ -1,18 +1,79 @@
+.password-list-body {
+  margin-top: 100px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
 .topnav {
-  position: fixed;
-  top: 5%;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  font-size: xx-large;
+}
+.topnav form {
+  padding-top: 30px;
+  padding-left: 25px;
+}
+.topnav .add-button {
+  display: block;
+  height: 2em;
+  width: 2em;
+  border: none;
+  background-color: #136F7C;
+  border-radius: 1em;
+  transition-duration: 0.4s;
+}
+.topnav .add-button:hover {
+  background-color: #0d4e57;
+}
+
+#password-list-table {
+  width: 60%;
+  background-color: #FFFFFF;
+  border: 1px #a9a9a9 solid;
+  padding: 3em;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border-radius: 2em;
+  white-space: nowrap;
+  text-align: center;
+}
+#password-list-table tr {
+  padding-block: 2em;
+}
+#password-list-table th {
+  font-size: x-large;
+}
+#password-list-table td {
+  padding-inline: 1em;
+  padding-block: 0.5em;
+}
+#password-list-table [id^=password] {
+  -webkit-text-security: disc;
+  -moz-text-security: disc;
+  -text-security: disc;
 }
 
 [id^=dropbtn] {
-  background-color: #3498DB;
-  color: white;
+  background-color: #FFFFFF;
+  display: flex;
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 2em;
+  color: #050505;
   padding: 16px;
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   cursor: pointer;
 }
 [id^=dropbtn]:hover, [id^=dropbtn]:focus {
-  background-color: #2980B9;
+  background-color: #e6e6e6;
 }
 
 [id^=dropdownbtn] {
@@ -26,9 +87,11 @@ button > * {
 
 [id^=dropdown] {
   display: none;
+  border-radius: 1em;
 }
 [id^=dropdown] a:hover {
   background-color: #ddd;
+  cursor: pointer;
 }
 
 .dropdown-content {

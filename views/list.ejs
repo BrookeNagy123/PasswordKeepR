@@ -36,45 +36,48 @@
 </head>
 <body class="password-list-body">
   <%- include('partials/_header') %>
-  <div class="topnav">
-    <h3>My Passwords</h3>
-    <div>
-      <form method="GET" action="/list/add">
-      <button type="submit" class="add-button">Add</button>
-    </form>
+  <div class="list-container">
+    <div class="topnav">
+      <h3>My Passwords</h3>
+      <div>
+        <form method="GET" action="/list/add">
+        <button type="submit" class="add-button">+</button>
+      </form>
+      </div>
     </div>
-  </div>
-  <table>
-  <tbody>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>URL</th>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Category</th>
-    </tr>
-    <% for (let password of passwords) { %>
+    <table id="password-list-table">
+    <tbody>
       <tr>
-        <td><img height="32" width="32" src='http://www.google.com/s2/favicons?domain=<%= password['url'] %>&sz=128' /></td>
-        <td><%= password['name'] %></td>
-        <td><a href="<%= password['url'] %>"><%= password['url'] %> </a></td>
-        <td><%= password['username'] %></td>
-        <td id="password-text-<%= password['id'] %>"><%= password['password'] %></td>
-        <td><%= password['category'] %></td>
-        <td id="drop-options-<%= password['id'] %>">
-          <button id="dropbtn-<%= password['id'] %>"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-          <div id="dropdown-<%= password['id'] %>" class="dropdown-content">
-            <a id="copy-password-<%= password['id'] %>">Copy Password</a>
-            <form method="GET" action="/list/pass_<%- password['id'] %>" id="edit-form-<%= password['id'] %>"></form>
-            <a onclick="document.getElementById('edit-form-<%= password['id'] %>').submit(); return false;">Edit</a>
-            <form method="POST" action="/list/pass_<%- password['id'] %>/delete" id="delete-form-<%= password['id'] %>"></form>
-            <a onclick="document.getElementById('delete-form-<%= password['id'] %>').submit(); return false;">Delete</a>
-          </div>
-        </td>
+        <th></th>
+        <th>Name</th>
+        <th>URL</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Category</th>
       </tr>
-   <% } %>
-  </tbody>
-</table>
+      <% for (let password of passwords) { %>
+        <tr>
+          <td><img height="32" width="32" src='http://www.google.com/s2/favicons?domain=<%= password['url'] %>&sz=128' /></td>
+          <td><%= password['name'] %></td>
+          <td><a href="<%= password['url'] %>"><%= password['url'] %> </a></td>
+          <td class="username-col"><%= password['username'] %></td>
+          <td id="password-text-<%= password['id'] %>-display">aaaaaaaaaa</td>
+          <td id="password-text-<%= password['id'] %>" hidden><%= password['password'] %></td>
+          <td><%= password['category'] %></td>
+          <td id="drop-options-<%= password['id'] %>">
+            <button id="dropbtn-<%= password['id'] %>"><i class="fa-solid fa-ellipsis"></i></button>
+            <div id="dropdown-<%= password['id'] %>" class="dropdown-content">
+              <a id="copy-password-<%= password['id'] %>">Copy Password</a>
+              <form method="GET" action="/list/pass_<%- password['id'] %>" id="edit-form-<%= password['id'] %>"></form>
+              <a onclick="document.getElementById('edit-form-<%= password['id'] %>').submit(); return false;">Edit</a>
+              <form method="POST" action="/list/pass_<%- password['id'] %>/delete" id="delete-form-<%= password['id'] %>"></form>
+              <a onclick="document.getElementById('delete-form-<%= password['id'] %>').submit(); return false;">Delete</a>
+            </div>
+          </td>
+        </tr>
+    <% } %>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
