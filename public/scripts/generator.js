@@ -38,8 +38,8 @@ $(generateBtn).click("click", () => {
 
 function generatePassword(upper, lower, number, symbol, length) {
   let generatedPassword = "";
-  let variationsCount = [upper, lower, number, symbol].length;
-  for (let i = 0; i < length; i += variationsCount) {
+  let variationsCount = [upper, lower, number, symbol].filter(Boolean).length
+  for (let i = 0; i <= length; i += variationsCount) {
     if(upper){
       generatedPassword += getRandomUpper();
     }
@@ -58,7 +58,7 @@ function generatePassword(upper, lower, number, symbol, length) {
 }
 
 function getRandomUpper() {
-  const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   return upper[Math.floor(Math.random() * upper.length)];
 }
 
