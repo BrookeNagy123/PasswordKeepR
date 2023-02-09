@@ -1,9 +1,10 @@
 <header>
   <nav class="navbar-container">
-    <a class="navbar-brand" href="/">PasswordKeepR</a>
+    <a class="navbar-brand" href="/"><img alt="PasswordKeepR Logo" src="images\passwordkeepr.png" id="logo-image"></a>
     <ul class="navbar-right">
       <% if (user) { %>
-        <li class="click-text"><a href="/list"><i class="fa-regular fa-circle-user"></i></a></li>
+        <li class="click-text"><a href="/generator">Generate</a></li>
+        <li class="click-text"><a href="/list">List</a></li>
         <li><form class="form-inline" method="POST" action="/logout">
           <button type="submit" class="button-logout">Log Out</button>
         </form></li>
