@@ -20,26 +20,26 @@ router.get("/", (req, res) => {
       .catch(error => {
         console.log(error);
         res.statusCode = 500;
-        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
       })
       .then(vaultId => listPasswords(vaultId))
       .catch(error => {
         console.log(error);
         res.statusCode = 500;
-        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
       })
       .then(passwordList => {
-        const templateVars = {passwords: passwordList, user: req.session.email ? req.session.email : null}
+        const templateVars = {passwords: passwordList, user: req.session.email ? req.session.email : null};
         res.render("list", templateVars);
       })
       .catch(error => {
         console.log(error);
         res.statusCode = 500;
-        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
       });
-    } else {
-      res.redirect("/");
-    }
+  } else {
+    res.redirect("/");
+  }
 });
 
 // route for edit screen
@@ -52,10 +52,10 @@ router.get("/pass_:id", (req, res) => {
       .catch(error => {
         console.log(error);
         res.statusCode = 500;
-        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
       });
-    const passInfoById = getPasswordById(passId)
-    const categories = getCategories()
+    const passInfoById = getPasswordById(passId);
+    const categories = getCategories();
     Promise.all([passInfoById, categories, userVaultId])
       .then(data => {
         if (data[0].vault_id === data[2]) {
@@ -63,13 +63,13 @@ router.get("/pass_:id", (req, res) => {
           res.render("edit", templateVars);
         } else {
           res.statusCode = 401;
-          res.send("<h1>401 Unauthorized!</h1> <h3>You do not have access to this Password.</h3>")
+          res.send("<h1>401 Unauthorized!</h1> <h3>You do not have access to this Password.</h3>");
         }
       })
       .catch(error => {
         console.log(error);
         res.statusCode = 500;
-        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
       });
   } else {
     res.redirect("/");
@@ -86,27 +86,27 @@ router.post("/pass_:id", (req, res) => {
       .catch(error => {
         console.log(error);
         res.statusCode = 500;
-        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
       });
-    const passInfoById = getPasswordById(passId)
+    const passInfoById = getPasswordById(passId);
     Promise.all([passInfoById, userVaultId])
       .then(data => {
         const vaultId = data[1];
         if (data[0].vault_id === data[1]) {
           editPassword(req.body, vaultId)
-          .then((data) => {
-            res.redirect("/list")
-          });
+            .then((data) => {
+              res.redirect("/list");
+            });
         } else {
           res.statusCode = 401;
-          res.send("<h1>401 Unauthorized!</h1> <h3>You do not have access to this Password.</h3>")
+          res.send("<h1>401 Unauthorized!</h1> <h3>You do not have access to this Password.</h3>");
         }
-    })
-    .catch(error => {
-      console.log(error);
-      res.statusCode = 500;
-      res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
-    });
+      })
+      .catch(error => {
+        console.log(error);
+        res.statusCode = 500;
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
+      });
   } else {
     res.redirect("/");
   }
@@ -117,13 +117,13 @@ router.get("/add", (req, res) => {
   if (req.session.email) {
     const categories = getCategories()
       .then((categories) => {
-        const templateVars = {categories: categories, user: req.session.email ? req.session.email : null}
-        res.render('add', templateVars)
+        const templateVars = {categories: categories, user: req.session.email ? req.session.email : null};
+        res.render('add', templateVars);
       })
       .catch(error => {
         console.log(error);
         res.statusCode = 500;
-        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
       });
   } else {
     res.redirect("/");
@@ -140,18 +140,18 @@ router.post("/add", (req, res) => {
       .catch(error => {
         console.log(error);
         res.statusCode = 500;
-        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
       })
       .then(vaultId => {
         addPassword(newPass, vaultId)
-        .then(() => {
-          res.redirect("/list");
-        });
+          .then(() => {
+            res.redirect("/list");
+          });
       })
       .catch(error => {
         console.log(error);
         res.statusCode = 500;
-        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
       });
   } else {
     res.redirect("/");
@@ -163,24 +163,24 @@ router.post("/pass_:id/delete", (req, res) => {
   if (req.session.email) {
     const passId = req.params.id;
     const userEmail = req.session.email;
-    const passInfoById = getPasswordById(passId)
+    const passInfoById = getPasswordById(passId);
     const userVaultId = getUserWithEmail(userEmail)
-      .then(userInfo => getVaultIdByOrgId(userInfo.organization_id))
+      .then(userInfo => getVaultIdByOrgId(userInfo.organization_id));
     Promise.all([userVaultId, passInfoById])
       .then(data => {
         if (data[0] === data[1].vault_id) {
           const deletePass = deletePassword(passId)
-            .then(() => res.redirect('/list'))
+            .then(() => res.redirect('/list'));
         } else {
           res.statusCode = 401;
-          res.send("<h1>401 Unauthorized!</h1> <h3>You do not have access to this Password.</h3>")
+          res.send("<h1>401 Unauthorized!</h1> <h3>You do not have access to this Password.</h3>");
         }
       })
       .catch(error => {
         console.log(error);
         res.statusCode = 500;
-        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>")
-      })
+        res.send("<h1>500 Internal Server Error!</h1> <h3>An error occurred.</h3>");
+      });
   } else {
     res.redirect("/");
   }
