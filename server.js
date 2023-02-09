@@ -33,11 +33,8 @@ app.use(cookieSession({
 }));
 
 
-// Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
-const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/widgets-api');
-const usersRoutes = require('./routes/users');
+// Separated Routes for each resource
+
 const passwordList = require('./routes/list');
 const login = require('./routes/login');
 const register = require('./routes/register');
@@ -45,10 +42,8 @@ const logout = require('./routes/logout');
 const generator = require('./routes/generator');
 
 // Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
-app.use('/users', usersRoutes);
+
 app.use('/list', passwordList);
 app.use('/login', login);
 app.use('/register', register);
