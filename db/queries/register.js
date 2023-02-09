@@ -1,5 +1,5 @@
 const db = require('../connection');
-
+//Select organization information by id
 const getOrgWithId = function (id) {
   return db.query(`SELECT * FROM users WHERE organization_id = $1`, [id])
     .then((result) => {
@@ -13,7 +13,7 @@ const getOrgWithId = function (id) {
       console.log(err.message);
     });
 };
-
+//Add new user into database
 const addUser = (newUser) => {
   const queryString = `
     INSERT INTO users (email, master_password, organization_id)

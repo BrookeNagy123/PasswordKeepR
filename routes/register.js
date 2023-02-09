@@ -17,7 +17,7 @@ const registerOrg = function (id) {
       return org;
     });
 }
-
+// Route for register screen
 router.get('/', (req, res) => {
   if (req.session.email) {
     res.redirect('list');
@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
     res.render('register', templateVars);
   }
 });
-
+// Route for register submission
 router.post("/", (req, res) => {
   const email = req.body.email;
   const id = req.body.organization_id;
