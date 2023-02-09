@@ -7,15 +7,25 @@ $click-text-colour: #FFFFFF;
 
 body {
   min-height: 100vh;
-  background: #DDDBCB;
+  background: $background-colour;
   font-family: $font-stack;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top: 100px;
+  height: 40em;
+  width: 30em;
+  border-radius: 2em;
+  border: 1px black solid;
+  background-color: $click-text-colour;
 }
 
 label {
@@ -24,13 +34,6 @@ label {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  margin: 10px;
-  position: relative;
-  border-width:1px;
-  border-style:solid;
-  border-radius: 5%;
-  border-color: #F5F1E3;
-  background-color: $click-text-colour;
   cursor: pointer;
 }
 
@@ -38,14 +41,14 @@ input[type=checkbox]{
   flex: none;
   margin-left: 20px;
   margin-right: 20px;
-  accent-color: $primary-colour
+  accent-color: $button-colour
 }
 
 input[type=number]{
   flex: none;
   margin-left: 10px;
   margin-right: 20px;
-  accent-color: $primary-colour
+  accent-color: $button-colour
 }
 
 input[type="range"] {
@@ -53,18 +56,18 @@ input[type="range"] {
   background: #f8f8f8;
   margin-left: 1rem;
   margin-right: 1rem;
-  accent-color: $primary-colour;
+  accent-color: $button-colour;
   cursor: pointer;
 }
 
 #copy{
- background-color: $primary-colour;
+ background-color: $button-colour;
  color: $click-text-colour;
  cursor: pointer;
 }
 
 #generate{
-  background-color: $primary-colour;
+  background-color: $button-colour;
   color: $click-text-colour;
   cursor: pointer;
 }
