@@ -14,11 +14,11 @@ header {
 }
 
 .navbar-container {
+  font-family: Alata;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #1b9aaa;
-  font-family: Alata;
   color: #FFFFFF;
   height: 5.5em;
 }
