@@ -1,27 +1,27 @@
-.password-add-body {
+.password-edit-body {
   margin-top: 100px;
   display: flex;
   justify-content: flex-start;
 }
 
-.add-container {
+.edit-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 60%;
 }
 
-.topnav-add {
+.topnav-edit {
   display: flex;
   justify-content: center;
   width: 60%;
   font-size: xx-large;
 }
-.topnav-add #back-button-container {
+.topnav-edit #back-button-container {
   padding-top: 30px;
   padding-right: 30px;
 }
-.topnav-add button {
+.topnav-edit button {
   height: 2em;
   width: 2em;
   border: none;
@@ -30,12 +30,12 @@
   transition-duration: 0.4s;
   color: #FFFFFF;
 }
-.topnav-add button:hover {
+.topnav-edit button:hover {
   background-color: #0d4e57;
   cursor: pointer;
 }
 
-.password-form-container {
+.password-form-edit-container {
   width: 60%;
   background-color: #FFFFFF;
   border: 1px #a9a9a9 solid;
@@ -47,10 +47,10 @@
   font-size: x-large;
   font-weight: bold;
 }
-.password-form-container label {
+.password-form-edit-container label {
   margin-top: 1em;
 }
-.password-form-container input, .password-form-container select {
+.password-form-edit-container input, .password-form-edit-container select {
   font-size: large;
   font-weight: normal;
   margin-top: 1em;
@@ -61,7 +61,7 @@
   border: 1px grey solid;
 }
 
-.submit-password {
+.submit-edit-password {
   background-color: #136F7C;
   color: #FFFFFF;
   box-decoration-break: none;
@@ -72,7 +72,7 @@
   margin-top: 1em;
   font-weight: normal;
 }
-.submit-password:hover {
+.submit-edit-password:hover {
   background-color: #0d4e57;
   cursor: pointer;
 }

@@ -8,20 +8,20 @@ $delete-exit-colour: #f44336;
 $background-colour: #F5F1E3;
 
 
-.password-add-body {
+.password-edit-body {
   margin-top: 100px;
   display: flex;
   justify-content: flex-start;
 }
 
-.add-container {
+.edit-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 60%;
 }
 
-.topnav-add {
+.topnav-edit {
   display: flex;
   justify-content: center;
   width: 60%;
@@ -48,7 +48,7 @@ $background-colour: #F5F1E3;
   }
 }
 
-.password-form-container {
+.password-form-edit-container {
   width: 60%;
   background-color: $click-text-colour;
   border: 1px #a9a9a9 solid;
@@ -76,7 +76,7 @@ $background-colour: #F5F1E3;
   }
 }
 
-.submit-password {
+.submit-edit-password {
     background-color: $button-colour;
     color: $click-text-colour;
     box-decoration-break: none;
