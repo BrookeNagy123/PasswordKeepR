@@ -64,7 +64,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/generator', (req, res) => {
-  res.render('generator');
+  const templateVars = { user: req.session.email ? req.session.email : null }
+  res.render('generator', templateVars);
 });
 
 app.listen(PORT, () => {
