@@ -14,7 +14,7 @@
 
 ## ERD
 
-![ERD](https://raw.githubusercontent.com/BrookeNagy123/PasswordKeepR/4b839f0ba6b8efb802535a4ca1c5d671d97c7111/planning/ERD.drawio.svg "ERD")
+![ERD](https://raw.githubusercontent.com/BrookeNagy123/PasswordKeepR/0cd2f29d03e6a276f5ae830bc1c4bed7b5e09db8/planning/ERD-PasswordKeepR.drawio.svg "ERD")
 
 ## Mockup
 * Home
