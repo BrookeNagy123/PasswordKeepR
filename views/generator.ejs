@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Home Page</title>
 
@@ -24,25 +23,24 @@
   <!-- Font Awesome Icon CDN CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Nav CSS -->
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+ <!-- Nav CSS -->
+ <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
   <!-- Main Page CSS -->
   <link rel="stylesheet" href="/styles/generator.css" type="text/css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/generator.js"></script>
+
 </head>
 
 <body>
   <%- include('partials/_header') %>
   <main>
       <h3>Generate Password</h3>
-      <section>
-        <input type="text" id="result">
-      <button id="copy" onclick="copy()"><i class="fa-solid fa-copy"></i></button>
-      <button class="generate-btn" id="generate"><i class="fa-solid fa-rotate-right"></i></button>
-    </section>
+      <input type="text" id="result">
+      <button id="copy" onclick="copy()">Copy</button>
+      <button class="generate-btn" id="generate">Generate</button>
     <h4>Options</h4>
     <form class="options">
       <label>
