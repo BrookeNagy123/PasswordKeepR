@@ -9,7 +9,7 @@
 }
 
 #loginbox {
-  width: 40%;
+  width: 30%;
   background-color: #FFFFFF;
   border: 1px #a9a9a9 solid;
   padding: 2em;
@@ -20,7 +20,7 @@
 }
 
 #registerbox {
-  width: 40%;
+  width: 30%;
   background-color: #FFFFFF;
   border: 1px #a9a9a9 solid;
   padding: 2em;
@@ -45,7 +45,7 @@
   background-color: #136F7C;
   color: #FFFFFF;
   box-decoration-break: none;
-  width: 55%;
+  width: 76%;
   height: 2em;
   border-radius: 1em;
   border: none;
