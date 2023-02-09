@@ -4,6 +4,13 @@ header {
   position: fixed;
 }
 
+#logo-image {
+  zoom: 30%;
+}
+#logo-image:hover {
+  filter: brightness(75%);
+}
+
 .navbar-container {
   display: flex;
   flex-direction: row;
@@ -11,7 +18,7 @@ header {
   background-color: #1b9aaa;
   font-family: Alata;
   color: #FFFFFF;
-  height: 4em;
+  height: 5.5em;
 }
 
 .navbar-brand {
@@ -46,6 +53,11 @@ header {
   height: 100%;
 }
 .click-text a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 87.5px;
+  text-align: center;
   color: #FFFFFF;
   text-decoration: none;
 }

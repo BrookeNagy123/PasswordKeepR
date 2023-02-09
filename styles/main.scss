@@ -1,4 +1,5 @@
 $background-colour: #F5F1E3;
+$default-text-font: Alata;
 
 body {
   display: flex;
@@ -7,4 +8,6 @@ body {
   align-items: center;
   min-height: 100vh;
   background: $background-colour;
+  font-family: $default-text-font;
+  font-size: large;
 }
