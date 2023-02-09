@@ -1,14 +1,24 @@
 body {
   min-height: 100vh;
-  background: #DDDBCB;
+  background: #F5F1E3;
   font-family: Alata;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top: 100px;
+  height: 40em;
+  width: 30em;
+  border-radius: 2em;
+  border: 1px black solid;
+  background-color: #FFFFFF;
 }
 
 label {
@@ -17,13 +27,6 @@ label {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  margin: 10px;
-  position: relative;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 5%;
-  border-color: #F5F1E3;
-  background-color: #FFFFFF;
   cursor: pointer;
 }
 
@@ -31,14 +34,14 @@ input[type=checkbox] {
   flex: none;
   margin-left: 20px;
   margin-right: 20px;
-  accent-color: #1b9aaa;
+  accent-color: #136F7C;
 }
 
 input[type=number] {
   flex: none;
   margin-left: 10px;
   margin-right: 20px;
-  accent-color: #1b9aaa;
+  accent-color: #136F7C;
 }
 
 input[type=range] {
@@ -46,18 +49,18 @@ input[type=range] {
   background: #f8f8f8;
   margin-left: 1rem;
   margin-right: 1rem;
-  accent-color: #1b9aaa;
+  accent-color: #136F7C;
   cursor: pointer;
 }
 
 #copy {
-  background-color: #1b9aaa;
+  background-color: #136F7C;
   color: #FFFFFF;
   cursor: pointer;
 }
 
 #generate {
-  background-color: #1b9aaa;
+  background-color: #136F7C;
   color: #FFFFFF;
   cursor: pointer;
 }
