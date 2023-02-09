@@ -11,8 +11,12 @@ const login =  function(email) {
 }
 
 router.get('/', (req, res) => {
-  const templateVars = {user: req.session.email ? req.session.email : null}
-  res.render('login', templateVars);
+  if (req.session.email) {
+    res.redirect('/list')
+  } else {
+    const templateVars = {user: req.session.email ? req.session.email : null}
+    res.render('login', templateVars);
+  }
 });
 
 router.post('/', (req, res) => {
