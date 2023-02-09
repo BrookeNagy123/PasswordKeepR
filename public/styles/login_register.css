@@ -32,25 +32,30 @@
 
 .form-control {
   font-size: large;
-    font-weight: normal;
-    margin-top: 1em;
-    margin-bottom: 1.5em;
-    width: 80%;
-    height: 2em;
-    border-radius: 0.5em;
-    border: 1px grey solid;
+  font-weight: normal;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  width: 80%;
+  height: 2em;
+  border-radius: 0.5em;
+  border: 1px grey solid;
 }
 
-.btn-primary{
+.btn-primary {
   background-color: #136F7C;
-    color: #FFFFFF;
-    box-decoration-break: none;
-    width: 30%;
-    height: 2em;
-    border-radius: 1em;
-    border: none;
-    margin-top: 1em;
-    font-weight: normal;
+  color: #FFFFFF;
+  box-decoration-break: none;
+  width: 30%;
+  height: 2em;
+  border-radius: 1em;
+  border: none;
+  margin-top: 1em;
+  font-weight: normal;
+}
+
+.btn-primary:hover {
+  background-color: #1B9AAA;
+  color: white
 }
 
 body {
