@@ -27,7 +27,7 @@ const getCategories = () => {
     })
 }
 
-const editPassword = (newPass) => {
+const editPassword = (newPass, id) => {
   const queryString = `
     UPDATE passwords
     SET name = $1,
@@ -40,7 +40,7 @@ const editPassword = (newPass) => {
     RETURNING *;
     `;
 
-  const values = [newPass['password-name'], 1, newPass.url, newPass.username, newPass.password, newPass.category_id, newPass.id]
+  const values = [newPass['password-name'], id, newPass.url, newPass.username, newPass.password, newPass.category_id, newPass.id];
   return db.query(queryString, values)
     .then(data => {
       return data.rows;

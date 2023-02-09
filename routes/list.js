@@ -91,8 +91,9 @@ router.post("/pass_:id", (req, res) => {
     const passInfoById = getPasswordById(passId)
     Promise.all([passInfoById, userVaultId])
       .then(data => {
+        const vaultId = data[1];
         if (data[0].vault_id === data[1]) {
-          editPassword(req.body)
+          editPassword(req.body, vaultId)
           .then((data) => {
             res.redirect("/list")
           });

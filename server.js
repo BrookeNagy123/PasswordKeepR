@@ -42,6 +42,7 @@ const passwordList = require('./routes/list');
 const login = require('./routes/login');
 const register = require('./routes/register');
 const logout = require('./routes/logout');
+const generator = require('./routes/generator');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -49,9 +50,10 @@ const logout = require('./routes/logout');
 app.use('/api/users', userApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/list', passwordList);
-app.use('/login', login)
-app.use('/register', register)
-app.use('/logout', logout)
+app.use('/login', login);
+app.use('/register', register);
+app.use('/logout', logout);
+app.use('/generator', generator);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -61,11 +63,6 @@ app.use('/logout', logout)
 app.get('/', (req, res) => {
   const templateVars = { user: req.session.email ? req.session.email : null }
   res.render('index', templateVars);
-});
-
-app.get('/generator', (req, res) => {
-  const templateVars = { user: req.session.email ? req.session.email : null }
-  res.render('generator', templateVars);
 });
 
 app.listen(PORT, () => {
