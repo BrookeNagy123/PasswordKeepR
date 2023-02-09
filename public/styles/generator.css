@@ -2,6 +2,7 @@ body {
   min-height: 100vh;
   background: #F5F1E3;
   font-family: Alata;
+  font-size: large;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,12 +14,13 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
-  height: 40em;
+  margin-top: 110px;
+  height: 37em;
   width: 30em;
   border-radius: 2em;
   border: 1px black solid;
   background-color: #FFFFFF;
+  font-size: large;
 }
 
 label {
@@ -26,21 +28,19 @@ label {
   font-family: Alata;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 2px;
   cursor: pointer;
 }
 
 input[type=checkbox] {
   flex: none;
-  margin-left: 20px;
-  margin-right: 20px;
+  width: 22px;
+  height: 22px;
   accent-color: #136F7C;
 }
 
 input[type=number] {
   flex: none;
-  margin-left: 10px;
-  margin-right: 20px;
   accent-color: #136F7C;
 }
 
@@ -56,17 +56,37 @@ input[type=range] {
 #copy {
   background-color: #136F7C;
   color: #FFFFFF;
+  box-decoration-break: none;
+  border-radius: 1em;
+  border: none;
+  margin-top: 1em;
+  font-weight: normal;
   cursor: pointer;
+  width: 60%;
+  height: 2em;
+}
+#copy:hover {
+  background-color: #0d4e57;
 }
 
 #generate {
   background-color: #136F7C;
   color: #FFFFFF;
+  box-decoration-break: none;
+  border-radius: 1em;
+  border: none;
+  margin-top: 1em;
+  font-weight: normal;
   cursor: pointer;
+  width: 60%;
+  height: 2em;
+}
+#generate:hover {
+  background-color: #0d4e57;
 }
 
 #result {
   border-radius: 5%;
-  font-size: large;
-  height: 30px;
+  width: 60%;
+  height: 2em;
 }
