@@ -1,5 +1,7 @@
 const db = require('../connection');
 
+
+//insert new password into db
 const addPassword = (newPass, id) => {
   const queryString = `
     INSERT INTO passwords (name, vault_id, url, username, password, category_id)
@@ -7,16 +9,17 @@ const addPassword = (newPass, id) => {
     RETURNING *;
     `;
 
-  const values = [newPass['password-name'], id, newPass.url, newPass.username, newPass.password, newPass.category_id]
+  const values = [newPass['password-name'], id, newPass.url, newPass.username, newPass.password, newPass.category_id];
   return db.query(queryString, values)
     .then(data => {
       return data.rows;
     })
     .catch(error => {
       console.log('query error:', error);
-    })
+    });
 };
 
+//select categories from db
 const getCategories = () => {
   return db.query('SELECT * FROM categories;')
     .then(data => {
@@ -24,9 +27,9 @@ const getCategories = () => {
     })
     .catch(error => {
       console.log('query error:', error);
-    })
-}
-
+    });
+};
+//update existing passwords from db
 const editPassword = (newPass, id) => {
   const queryString = `
     UPDATE passwords
@@ -47,9 +50,10 @@ const editPassword = (newPass, id) => {
     })
     .catch(error => {
       console.log('query error:', error);
-    })
+    });
 };
 
+//delete existing passwords from db
 const deletePassword = (passId) => {
   const queryString = `
     DELETE FROM passwords
@@ -58,13 +62,13 @@ const deletePassword = (passId) => {
 
   const values = [passId];
   return db.query(queryString, values)
-  .then(data => {
-    return data.rows;
-  })
-  .catch(error => {
-    console.log('query error:', error);
-  })
-}
+    .then(data => {
+      return data.rows;
+    })
+    .catch(error => {
+      console.log('query error:', error);
+    });
+};
 
 
 
