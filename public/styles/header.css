@@ -6,6 +6,8 @@ header {
 
 #logo-image {
   zoom: 30%;
+  padding-left: 1em;
+  transition-duration: 0.4s;
 }
 #logo-image:hover {
   filter: brightness(75%);
@@ -28,11 +30,6 @@ header {
   font-size: xx-large;
 }
 
-.fa-regular {
-  color: #FFFFFF;
-  font-size: xx-large;
-}
-
 .navbar-right {
   display: flex;
   flex-direction: row;
@@ -44,19 +41,27 @@ header {
 .navbar-right li {
   display: flex;
   align-items: center;
-  padding-inline: 1em;
+  margin-inline: 0.5em;
   text-decoration: none;
+}
+.navbar-right li button {
+  background-color: #1b9aaa;
+  display: block;
+  height: 5.5em;
+  width: 80px;
+  border: none;
 }
 
 .click-text {
   color: white;
   height: 100%;
+  transition-duration: 0.4s;
 }
 .click-text a {
   display: block;
   height: 100%;
-  width: 100%;
-  line-height: 87.5px;
+  width: 80px;
+  line-height: 100px;
   text-align: center;
   color: #FFFFFF;
   text-decoration: none;
@@ -66,13 +71,10 @@ header {
 }
 
 .button-logout {
-  background-color: #f44336;
-  border-radius: 8px;
-  border: none;
-  padding: 1em;
   transition-duration: 0.4s;
   color: #FFFFFF;
 }
 .button-logout:hover {
-  background-color: #136F7C;
+  background-color: #f44336;
+  cursor: pointer;
 }

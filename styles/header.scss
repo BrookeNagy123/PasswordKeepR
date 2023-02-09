@@ -13,6 +13,8 @@ header {
 
 #logo-image {
   zoom: 30%;
+  padding-left: 1em;
+  transition-duration: 0.4s;
 
   &:hover {
     filter: brightness(75%);
@@ -20,11 +22,12 @@ header {
 }
 
 .navbar-container {
+  font-family: $font-stack;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: $primary-colour;
-  font-family: $font-stack;
+  font-family:
   color: $click-text-colour;
   height: 5.5em;
 }
@@ -33,11 +36,6 @@ header {
   display: flex;
   align-items: center;
   text-decoration: none;
-  font-size: xx-large;
-}
-
-.fa-regular {
-  color: $click-text-colour;
   font-size: xx-large;
 }
 
@@ -52,20 +50,29 @@ header {
   & li {
     display: flex;
     align-items: center;
-    padding-inline: 1em;
+    margin-inline: 0.5em;
     text-decoration: none;
+
+    & button {
+      background-color: $primary-colour;
+      display: block;
+      height: 5.5em;
+      width: 80px;
+      border: none;
+    }
   }
 }
 
 .click-text {
   color: white;
   height: 100%;
+  transition-duration: 0.4s;
 
   & a {
     display: block;
     height: 100%;
-    width: 100%;
-    line-height: 87.5px;
+    width: 80px;
+    line-height: 100px;
     text-align: center;
     color: $click-text-colour;
     text-decoration: none;
@@ -77,14 +84,11 @@ header {
 }
 
 .button-logout {
-  background-color: $delete-exit-colour;
-  border-radius: 8px;
-  border: none;
-  padding: 1em;
   transition-duration: 0.4s;
   color: $click-text-colour;
 
   &:hover {
-    background-color: $button-colour;
+    background-color: $delete-exit-colour;
+    cursor: pointer;
   }
 }
