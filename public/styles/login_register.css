@@ -13,6 +13,7 @@
   background-color: #FFFFFF;
   border: 1px #a9a9a9 solid;
   padding: 2em;
+  padding-bottom: 3em;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
   border-radius: 2em;
   white-space: nowrap;
@@ -26,6 +27,7 @@
   padding: 2em;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
   border-radius: 2em;
+  padding-bottom: 3em;
   white-space: nowrap;
   text-align: center;
 }

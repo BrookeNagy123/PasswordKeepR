@@ -1,3 +1,4 @@
+//scss variables
 $background-colour: #F5F1E3;
 $font-stack: Alata;
 $primary-colour: #1b9aaa;
@@ -17,7 +18,7 @@ body {
   align-items: center;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,14 +42,14 @@ label {
   cursor: pointer;
 }
 
-input[type=checkbox]{
+input[type=checkbox] {
   flex: none;
   width:22px;
   height:22px;
   accent-color: $button-colour
 }
 
-input[type=number]{
+input[type=number] {
   flex: none;
   accent-color: $button-colour
 }
@@ -62,7 +63,7 @@ input[type="range"] {
   cursor: pointer;
 }
 
-#copy{
+#copy {
   background-color: $button-colour;
   color: $click-text-colour;
   box-decoration-break: none;
