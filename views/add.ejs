@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add a Password</title>
+  <title>Add Password</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
 
-   <!-- External Google Font ABeeZee & Alata-->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Alata&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/images/passwordkeepr.png">
+
+  <!-- External Google Font ABeeZee & Alata-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Alata&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icon CDN CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,15 +29,16 @@
   <link rel="stylesheet" href="/styles/add.css" type="text/css" />
 
 </head>
-<body class="password-list-body">
+<body class="password-add-body">
   <%- include('partials/_header') %>
-  <div class="topnav-add">
-    <h3>Add a New Password</h3>
-        <form>
-            <input type="button" value="Back" onclick="history.back()">
-        </form>
+  <div class="add-container">
+    <div class="topnav-add">
+      <div id="back-button-container">
+        <button type="submit" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></button>
+      </div>
+      <h3>Add New Password</h3>
     </div>
-    <form method="POST" action="/list/add" class="password-form-container">
+      <form method="POST" action="/list/add" class="password-form-container">
         <label for="password-name">Name</label></br>
         <input type="text" name="password-name"></br>
         <label for="url">URL</label></br>
@@ -50,9 +54,10 @@
           }
           <% } %>
         </select>
-        <button type="submit" class="submit-password">Submit</button>
+      </br>
+      <button type="submit" class="submit-password">Submit</button>
     </form>
-    <div></div>
-
+  </div>
+</div>
 </body>
 </html>

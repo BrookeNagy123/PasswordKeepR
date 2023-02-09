@@ -18,7 +18,6 @@ $background-colour: #F5F1E3;
   flex-direction: column;
   align-items: center;
   width: 60%;
-
 }
 
 .topnav {
@@ -40,9 +39,11 @@ $background-colour: #F5F1E3;
     background-color: $button-colour;
     border-radius: 1em;
     transition-duration: 0.4s;
+    color: $click-text-colour;
 
     &:hover {
       background-color: $button-colour-hover;
+      cursor: pointer;
     }
   }
 }
