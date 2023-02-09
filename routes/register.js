@@ -19,13 +19,17 @@ const registerOrg = function (id) {
 }
 
 router.get('/', (req, res) => {
-  const templateVars = { user: req.session.email ? req.session.email : null }
-  res.render('register', templateVars);
+  if (req.session.email) {
+    res.redirect('list');
+  } else {
+    const templateVars = { user: req.session.email ? req.session.email : null }
+    res.render('register', templateVars);
+  }
 });
 
 router.post("/", (req, res) => {
   const email = req.body.email;
-  const id = req.body.organization_id
+  const id = req.body.organization_id;
   register(email)
     .then(user => {
       if (user) {
@@ -35,7 +39,7 @@ router.post("/", (req, res) => {
       registerOrg(id)
         .then(org => {
           if (!org) {
-            res.status(400).send('🚨Organizations does not exist!🧐');
+            res.status(400).send('🚨Organization does not exist!🧐');
             return;
           };
           newUser = req.body;

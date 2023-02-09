@@ -49,9 +49,6 @@
 #password-list-table tr {
   padding-block: 2em;
 }
-#password-list-table th {
-  font-size: x-large;
-}
 #password-list-table td {
   padding-inline: 1em;
   padding-block: 0.5em;
