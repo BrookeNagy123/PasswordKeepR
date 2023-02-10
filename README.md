@@ -36,13 +36,26 @@ This project serves as a project to apply full-stack development concepts includ
   - Note: nodemon is used, so you should not have to restart your server
 8. Visit `http://localhost:8080/`
 
-
 ## Screenshots
 
-!["Screenshot of Mobile Screen"](XX)
+!["Screenshot of Home Page"](https://github.com/BrookeNagy123/PasswordKeepR/blob/master/public/images/1.png?raw=true)
+
+!["Screenshot of List Page"](https://github.com/BrookeNagy123/PasswordKeepR/blob/master/public/images/2.png?raw=true)
+
+!["Screenshot of Generator Page"](https://github.com/BrookeNagy123/PasswordKeepR/blob/master/public/images/3.png?raw=true)
 
 ## Dependencies
 
 - Node 10.x or above
 - NPM 5.x or above
-- PG 6.x
+- PG 8.5.0
+- SASS 1.35.1
+- Express 4.17.1
+- EJS 2.6.2
+- dotenv 2.0.0
+- cookie-session 2.0.0
+- chalk 2.4.2
+- morgan 1.9.1
+
+## Development Dependencies
+- nodemon 2.0.10
