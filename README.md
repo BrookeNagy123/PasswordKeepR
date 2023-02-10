@@ -1,5 +1,5 @@
 # PasswordKeepR
-=========
+
 ## Description
 
 In today's digital age at both home and work, you have more online accounts than you can possibly remember. Since 81% of account breaches are due to weak or reused passwords, it’s essential that each account has a strong, unique password. So how are you supposed to remember these strong, unique passwords? Let PasswordKeepR handle it!
