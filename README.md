@@ -8,7 +8,9 @@ This app allows authorized users access to all their passwords, from both person
 
 It's that simple! 😉
 
-This project serves as a project to apply full-stack development concepts including HTML/EJS, CSS/SASS, NodeJS, Express, PostgreSQL
+This project serves as a project to apply full-stack development concepts including HTML/EJS, CSS/SASS, NodeJS, Express, PostgreSQL.
+
+Made by [Brooke Nagy](https://github.com/BrookeNagy123), [Jaewon Bae](https://github.com/binding1) and [Di Lu](https://github.com/brotherludi).
 
 ## Features
 
