@@ -1,4 +1,4 @@
-// Client facing scripts here
+// Generator Script
 
 //Elements Required from generator.ejs
 const includeUppercase = document.getElementById('uppercase');
@@ -11,6 +11,7 @@ const result = document.getElementById("result");
 const generateBtn = document.getElementById("generate");
 const copyPass = document.getElementById("copy");
 
+//Upon load of the page set up the first generated password
 $(window).load("DOMContentLoaded", () => {
   passLength.value = 10;
   passLengthResult.innerText = "10";
@@ -22,11 +23,12 @@ $(window).load("DOMContentLoaded", () => {
   result.value = generatePassword(onLoadUpper, onLoadLower, onLoadNumbers, onLoadSymbols, onLoadLength);
 });
 
-
+//Watch for an event change of the password length
 $(passLength).change("change", (event) => {
   passLengthResult.innerText = event.target.value;
 });
 
+//Watch for a click to change options for password generator
 $(generateBtn).click("click", () => {
   const upper = includeUppercase.checked;
   const lower = includeLowercase.checked;
@@ -36,9 +38,10 @@ $(generateBtn).click("click", () => {
   result.value = generatePassword(upper, lower, numbers, symbols, length);
 });
 
+//Function to generate password using the different options
 function generatePassword(upper, lower, number, symbol, length) {
   let generatedPassword = "";
-  let variationsCount = [upper, lower, number, symbol].filter(Boolean).length
+  let variationsCount = [upper, lower, number, symbol].filter(Boolean).length //filter out options not set to true
   for (let i = 0; i <= length; i += variationsCount) {
     if(upper){
       generatedPassword += getRandomUpper();
@@ -56,6 +59,8 @@ function generatePassword(upper, lower, number, symbol, length) {
   const finalPassword = generatedPassword.slice(0, length);
   return finalPassword;
 }
+
+//Functions to get random upper, lower, number, and symbol
 
 function getRandomUpper() {
   const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -77,7 +82,7 @@ function getRandomSymbol() {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-
+//Copy to clipboard for generated password
 $(copyPass).click(function(){
   $(result).select();
   document.execCommand('copy');
