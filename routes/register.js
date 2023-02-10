@@ -3,14 +3,14 @@ const router = express.Router();
 const { addUser, getOrgWithId } = require('../db/queries/register');
 const { getUserWithEmail } = require('../db/queries/login');
 const db = require('../db/connection');
-
+//Function to check database for email and return user
 const register = function (email) {
   return getUserWithEmail(email)
     .then(user => {
       return user;
     });
 }
-
+//Function to check database for id and return organization
 const registerOrg = function (id) {
   return getOrgWithId(id)
     .then(org => {
