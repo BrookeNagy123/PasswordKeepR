@@ -3,13 +3,18 @@ $(document).ready(function() {
     $("[id^='copy-password']").on("click", (e => {
       const passwordIdTarget = String(e.currentTarget.id);
 
-      //retrieve password id
+    //retrieve password id
       const passwordId = passwordIdTarget.replace('copy-password-', '');
       const passText = $("#password-text-" + passwordId).text();
 
-      //retrieve password value by id then copy to clipboard
-      navigator.clipboard.writeText(passText);
-    alert("Password copied to clipboard!");
+    //retrieve password value by id then copy to clipboard
+      navigator.clipboard.writeText(passText)
+      .then(() => {
+        alert("Password copied to clipboard!");
+      })
+      .catch(() => {
+        alert("Something went wrong!");
+      });
   })
   )}
 );
