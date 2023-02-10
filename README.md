@@ -1,28 +1,24 @@
-PasswordKeepR
+# PasswordKeepR
 =========
-A storage system for passwords for organzations. An organization, like Lighthouse labs, has many different accounts which need to be shared between users. This app will let an authorized user acess all the passwords of the organization. The app will also let a user generate a new password for a specific account (just like LastPass). Users will be able to generate a password based on the options the form will provide. Some of the options are: password length, contains lowercase, contairs uppercase, contains numbers, and contains symbols.
+## Description
 
-If a user needs to log in to a specific website (e.g. Facebook) they can go into the app, find the appropriate password, click a button which copies the password into the clipboard, and log in.
+In today's digital age at both home and work, you have more online accounts than you can possibly remember. Since 81% of account breaches are due to weak or reused passwords, it’s essential that each account has a strong, unique password. So how are you supposed to remember these strong, unique passwords? Let PasswordKeepR handle it!
 
-## Requirements
+This app allows authorized users access to all their passwords, from both personal and organizations. In a addition, users can generate a new password for their online accounts. Users will be able to generate a password based on the options the form will provide. Easily find, copy and paste your passwords for your favourite websites!
+
+It's that simple! 😉
+
+This project serves as a project to apply full-stack development concepts including HTML/EJS, CSS/SASS, NodeJS, Express, PostgreSQL
+
+## Features
 
 1. user can register/login and be assigned to an organization
-2. an organization has many users
+2. an organization has multiple users
 3. user can add a new username and password for a specific website
-4. app can generate passwords based on the criteria specified (password length, contains lowercase contairs uppercase, contains numbers, etc)
+4. app can generate passwords based on the criteria specified (password length, contains lowercase, contains uppercase, contains numbers, etc.)
 5. user can edit and change their password any time
-6. user has a convinient copy to clipboard button so they dont have to select the password
-7. sites can be categoried, to, social (fb, linkedin), work related (bamboo, harvest), entertainment (snapchat, reddit), etc, etc
-
-## Project Setup
-
-The following steps are only for _one_ of the group members to perform.
-
-1. Create your own copy of this repo using the `Use This Template` button, ideally using the name of your project. The repo should be marked Public
-2. Verify that the skeleton code now shows up in your repo on GitHub, you should be automatically redirected
-3. Clone your copy of the repo to your dev machine
-4. Add your team members as collaborators to the project so that they can push to this repo
-5. Let your team members know the repo URL so that they use the same repo (they should _not_ create a copy/fork of this repo since that will add additional workflow complexity to the project)
+6. user has a convenient copy to clipboard button so they dont have to select the password
+7. sites can be categorized to social (fb, linkedin), work related (bamboo, harvest), entertainment (snapchat, reddit), etc.
 
 
 ## Getting Started
@@ -40,6 +36,10 @@ The following steps are only for _one_ of the group members to perform.
   - Note: nodemon is used, so you should not have to restart your server
 8. Visit `http://localhost:8080/`
 
+
+## Screenshots
+
+!["Screenshot of Mobile Screen"](XX)
 
 ## Dependencies
 
