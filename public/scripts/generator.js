@@ -6,7 +6,7 @@ const includeLowercase = document.getElementById("lowercase");
 const includeNumbers = document.getElementById("numbers");
 const includeSymbols = document.getElementById("symbols");
 const passLength = document.getElementById("length");
-const passLengthResult = document.getElementById('length-result')
+const passLengthResult = document.getElementById('length-result');
 const result = document.getElementById("result");
 const generateBtn = document.getElementById("generate");
 const copyPass = document.getElementById("copy");
@@ -41,12 +41,12 @@ $(generateBtn).click("click", () => {
 //Function to generate password using the different options
 function generatePassword(upper, lower, number, symbol, length) {
   let generatedPassword = "";
-  let variationsCount = [upper, lower, number, symbol].filter(Boolean).length //filter out options not set to true
+  let variationsCount = [upper, lower, number, symbol].filter(Boolean).length; //filter out options not set to true
   for (let i = 0; i <= length; i += variationsCount) {
-    if(upper){
+    if (upper) {
       generatedPassword += getRandomUpper();
     }
-    if(lower){
+    if (lower) {
       generatedPassword += getRandomLower();
     }
     if (number) {
