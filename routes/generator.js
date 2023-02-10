@@ -7,13 +7,13 @@
 const express = require('express');
 const router  = express.Router();
 
-//GET Route 
+//GET Route
 router.get('/', (req, res) => {
   if (req.session.email) {
     const templateVars = {user: req.session.email ? req.session.email : null};
     res.render('generator', templateVars);
   } else {
-    res.redirect('/')
+    res.redirect('/');
   }
 
 });
