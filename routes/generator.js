@@ -7,7 +7,7 @@
 const express = require('express');
 const router  = express.Router();
 
-
+//GET Route 
 router.get('/', (req, res) => {
   if (req.session.email) {
     const templateVars = {user: req.session.email ? req.session.email : null};
