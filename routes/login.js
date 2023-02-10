@@ -15,14 +15,14 @@ const login = function (email) {
     .then(user => {
       return user;
     });
-}
+};
 
 //GET Route
 router.get('/', (req, res) => {
   if (req.session.email) {
-    res.redirect('/list')
+    res.redirect('/list');
   } else {
-    const templateVars = { user: req.session.email ? req.session.email : null }
+    const templateVars = { user: req.session.email ? req.session.email : null };
     res.render('login', templateVars);
   }
 });
@@ -36,8 +36,8 @@ router.post('/', (req, res) => {
         res.send("🚨Please use valid login details");
         return;
       }
-      req.session.email = email
-      res.redirect('list')
+      req.session.email = email;
+      res.redirect('list');
     })
     .catch(e => console.log(e));
 });
