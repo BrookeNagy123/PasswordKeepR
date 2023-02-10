@@ -1,5 +1,6 @@
 const db = require('../connection');
 
+//Get the user from the database with the email that was input.
 const getUserWithEmail = function (email) {
   return db.query(`SELECT * FROM users WHERE email = $1`, [email])
     .then((result) => {
